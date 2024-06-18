@@ -18,7 +18,7 @@ class DiarizationPipeline:
         if isinstance(device, str):
             device = torch.device(device)
         self.model = Pipeline.from_pretrained(model_name, use_auth_token=use_auth_token).to(device)
-        model = SegmentationModel().from_pretrained("filfagundes/speaker-segmentation-fine-tuned-pt", use_auth_token=use_auth_token)
+        model = SegmentationModel().from_pretrained("facebook/hubert-xlarge-ls960-ft", use_auth_token=use_auth_token)
         model = model.to_pyannote_model()
         self.model._segmentation.model = model.to(device)
 
