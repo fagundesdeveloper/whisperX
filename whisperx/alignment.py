@@ -34,7 +34,7 @@ DEFAULT_ALIGN_MODELS_HF = {
     "zh": "jonatasgrosman/wav2vec2-large-xlsr-53-chinese-zh-cn",
     "nl": "jonatasgrosman/wav2vec2-large-xlsr-53-dutch",
     "uk": "Yehor/wav2vec2-xls-r-300m-uk-with-small-lm",
-    "pt": "jonatasgrosman/wav2vec2-large-xlsr-53-portuguese",
+    "pt": "jonatasgrosman/wav2vec2-xls-r-1b-portuguese",
     "ar": "jonatasgrosman/wav2vec2-large-xlsr-53-arabic",
     "cs": "comodoro/wav2vec2-xls-r-300m-cs-250",
     "ru": "jonatasgrosman/wav2vec2-large-xlsr-53-russian",

@@ -171,7 +171,7 @@ class FasterWhisperPipeline(Pipeline):
         return final_iterator
 
     def transcribe(
-        self, audio: Union[str, np.ndarray], batch_size=None, num_workers=0, language=None, task=None, chunk_size=30, print_progress = False, combined_progress=False
+        self, audio: Union[str, np.ndarray], batch_size=None, num_workers=0, language=None, task=None, chunk_size=8, print_progress = False, combined_progress=False
     ) -> TranscriptionResult:
         if isinstance(audio, str):
             audio = load_audio(audio)
@@ -344,7 +344,7 @@ def load_model(whisper_arch,
     if vad_model is not None:
         vad_model = vad_model
     else:
-        vad_model = load_vad_model(torch.device(device), use_auth_token=None, **default_vad_options)
+        vad_model = load_vad_model(torch.device(device), use_auth_token="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", **default_vad_options)
 
     return FasterWhisperPipeline(
         model=model,
