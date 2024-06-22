@@ -12,13 +12,13 @@ class DiarizationPipeline:
     def __init__(
         self,
         model_name="pyannote/speaker-diarization-3.1",
-        use_auth_token="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",
+        use_auth_token=None,
         device: Optional[Union[str, torch.device]] = "cpu",
     ):
         if isinstance(device, str):
             device = torch.device(device)
         self.model = Pipeline.from_pretrained(model_name, use_auth_token=use_auth_token).to(device)
-        model = SegmentationModel().from_pretrained("filfagundes/speaker-segmentation-fine-tuned-pt", use_auth_token=use_auth_token)
+        model = SegmentationModel().from_pretrained("pyannote/segmentation-3.0", use_auth_token=use_auth_token)
         model = model.to_pyannote_model()
         self.model._segmentation.model = model.to(device)
 
