@@ -198,7 +198,7 @@ class Binarize:
 class VoiceActivitySegmentation(VoiceActivityDetection):
     def __init__(
         self,
-        segmentation: PipelineModel = "filfagundes/speaker-segmentation-fine-tuned-pt",
+        segmentation: PipelineModel = "pyannote/segmentation",
         fscore: bool = False,
         use_auth_token: Union[Text, None] = None,
         **inference_kwargs,
